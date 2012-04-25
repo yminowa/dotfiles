@@ -6,9 +6,9 @@
 #
 export LANG=ja_JP.UTF-8
 case ${UID} in
-0)
-    LANG=C
-    ;;
+	0)
+		LANG=C
+		;;
 esac
 
 
@@ -19,18 +19,18 @@ esac
 autoload colors
 colors
 case ${UID} in
-0)
-    PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') %B%{${fg[yellow]}%}%/#%{${reset_color}%}%b "
-    PROMPT2="%B%{${fg[red]}%}%_#%{${reset_color}%}%b "
-    SPROMPT="%B%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%}%b "
-    ;;
-*)
-    PROMPT="%{${fg[yellow]}%}%/%%%{${reset_color}%} "
-    PROMPT2="%{${fg[red]}%}%_%%%{${reset_color}%} "
-    SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
-    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
-        PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
-    ;;
+	0)
+		PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') %B%{${fg[yellow]}%}%/#%{${reset_color}%}%b "
+		PROMPT2="%B%{${fg[red]}%}%_#%{${reset_color}%}%b "
+		SPROMPT="%B%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%}%b "
+		;;
+	*)
+		PROMPT="%{${fg[yellow]}%}%/%%%{${reset_color}%} "
+		PROMPT2="%{${fg[red]}%}%_%%%{${reset_color}%} "
+		SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
+		[ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
+		PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
+		;;
 esac
 
 # auto change directory
@@ -120,12 +120,12 @@ alias where="command -v"
 alias j="jobs -l"
 
 case "${OSTYPE}" in
-freebsd*|darwin*)
-    alias ls="ls -G -w"
-    ;;
-linux*)
-    alias ls="ls --color"
-    ;;
+	freebsd*|darwin*)
+		alias ls="ls -G -w"
+		;;
+	linux*)
+		alias ls="ls --color"
+		;;
 esac
 
 alias la="ls -a"
@@ -141,51 +141,56 @@ alias su="su -l"
 ## terminal configuration
 #
 case "${TERM}" in
-screen)
-    TERM=xterm
-    ;;
+	screen)
+		TERM=xterm
+		;;
 esac
 
 case "${TERM}" in
-xterm|xterm-color)
-##    export LSCOLORS=exfxcxdxbxegedabagacad
-    export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-    zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-    ;;
-kterm-color)
-    stty erase '^H'
-    export LSCOLORS=exfxcxdxbxegedabagacad
-    export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-    zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-    ;;
-kterm)
-    stty erase '^H'
-    ;;
-cons25)
-    unset LANG
-    export LSCOLORS=ExFxCxdxBxegedabagacad
-    export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-    zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
-    ;;
-jfbterm-color)
-    export LSCOLORS=gxFxCxdxBxegedabagacad
-    export LS_COLORS='di=01;36:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-    zstyle ':completion:*' list-colors 'di=;36;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
-    ;;
+	xterm|xterm-color)
+		##    export LSCOLORS=exfxcxdxbxegedabagacad
+		export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+		zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
+		;;
+	kterm-color)
+		stty erase '^H'
+		export LSCOLORS=exfxcxdxbxegedabagacad
+		export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+		zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
+		;;
+	kterm)
+		stty erase '^H'
+		;;
+	cons25)
+		unset LANG
+		export LSCOLORS=ExFxCxdxBxegedabagacad
+		export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+		zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
+		;;
+	jfbterm-color)
+		export LSCOLORS=gxFxCxdxBxegedabagacad
+		export LS_COLORS='di=01;36:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+		zstyle ':completion:*' list-colors 'di=;36;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
+		;;
 esac
 
 set terminal title including current directory
 
 case "${TERM}" in
-xterm|xterm-color|kterm|kterm-color)
-    precmd() {
-        echo -ne "\033]0;${USER}@${HOST%%.*}:${PWD}\007"
-    }
-    ;;
+	xterm|xterm-color|kterm|kterm-color)
+		precmd() {
+			echo -ne "\033]0;${USER}@${HOST%%.*}:${PWD}\007"
+		}
+		;;
 esac
 
-
 alias r=rails
+
+# for git settings
+
+alias g=git
+alias gc="git commit -m"
+alias ga="git add"
 # load user .zshrc configuration file
 #
 [ -f ${HOME}/.zshrc.mine ] && source ${HOME}/.zshrc.mine
@@ -204,7 +209,7 @@ alias r=rails
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 # export CC=/usr/bin/gcc-4.2
-source ~/.nvm/nvm.sh
-nvm use 0.4.12
-export PATH=~/node_modules/.bin/:$PATH
+# source ~/.nvm/nvm.sh
+# nvm use 0.4.12
+# export PATH=~/node_modules/.bin/:$PATH
 
