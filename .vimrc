@@ -1,5 +1,5 @@
 filetype off
-set rtp+=~/.vim/vundle.git/    " (2)
+set rtp+=~/.vim/bundle/vundle/    " (2)
 call vundle#rc()
 
 "----------------------------------------------------------
