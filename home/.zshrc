@@ -213,3 +213,7 @@ alias ga="git add"
 # nvm use 0.4.12
 # export PATH=~/node_modules/.bin/:$PATH
 
+alias ls="ls -al"
+
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
