@@ -14,13 +14,14 @@ Bundle "Shougo/neosnippet"
 let g:user_zen_expandabbr_key = '<c-e>'
 
 set enc=utf-8
-set fenc=utf-8
+"set fenc=utf-8
 set fencs=iso-2022-jp,utf-8,euc-jp,cp932
 
 syntax on
 
 set autoindent
 set smartindent
+set expandtab
 set shiftwidth=2
 set tabstop=2
 set guioptions-=T
